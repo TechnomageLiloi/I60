@@ -3,6 +3,12 @@
     {
         padding: 5px;
     }
+
+    #rune-collection h1
+    {
+        text-align: center;
+    }
+
     #rune-collection table
     {
         width: 100%;
@@ -41,9 +47,13 @@
     }
 </style>
 <div id="rune-collection">
+    <h1>News topics</h1>
     <?php foreach($collection as $entity): ?>
         <div class="topic">
             <h3>
+                <a href="<?php echo $entity->getUrl(); ?>" target="_blank">
+                    &para;
+                </a>
                 <a href="<?php echo $entity->getUrl(); ?>">
                     <?php echo $entity->getTitle(); ?>
                 </a>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Nexus\API\Application\Topics\Collection;
+namespace Liloi\Nexus\API\Topics\Collection;
 
 use Liloi\API\Response;
 use Liloi\Nexus\API\Method as SuperMethod;
@@ -17,9 +17,9 @@ class Method extends SuperMethod
         $collection = Manager::loadPublished();
 
         $response = new Response();
-        $response->set('render', static::render(__DIR__ . '/User.tpl'), [
+        $response->set('render', static::render(__DIR__ . '/User.tpl', [
             'collection' => $collection
-        ]);
+        ]));
 
         return $response;
     }

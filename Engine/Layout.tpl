@@ -15,6 +15,7 @@
         <link href="<?php echo ROOT_URL; ?>/Engine/API/Style.css" rel="stylesheet" />
 
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Topics/Requests.js"></script>
 
         <title>Nexus</title>
     </head>
@@ -39,7 +40,7 @@
         </table>
 
         <script>
-            //Nexus.
+            Nexus.Topics.collection();
         </script>
     </body>
 </html>

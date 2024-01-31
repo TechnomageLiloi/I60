@@ -25,6 +25,8 @@ class Tree
         {
             $manager = new Manager();
 
+            $manager->add(new Method('Nexus.Topics.Collection', '\Liloi\Nexus\API\Topics\Collection\Method::execute'));
+
             self::$instance = new self($manager);
         }
 
