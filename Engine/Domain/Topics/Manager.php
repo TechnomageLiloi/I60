@@ -40,7 +40,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where status in ("%s", "%s") order by key_topic desc;',
+            'select * from %s where status in ("%s", "%s") order by ts desc;',
             $name, Statuses::PUBLISHED, Statuses::DEPRECATED
         ));
 

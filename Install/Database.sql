@@ -1,4 +1,4 @@
-create table nexus_topics
+create table road_topics
 (
     key_topic bigint unsigned auto_increment,
     url varchar(1000) not null,
