@@ -10,7 +10,8 @@ $app = new Application([
     'start' => 'Requests.layout();',
     'scripts' => [
         '/Requests.js'
-    ]
+    ],
+    "database" => json_decode(file_get_contents('./Database.json'), true)
 ]);
 
 echo $app->compile();
