@@ -26,8 +26,13 @@ body table {
   width: 100%;
 }
 body table th {
+  padding: 3px;
   text-align: left;
+  border-bottom: gray 1px solid;
 }
 body table td {
+  padding: 3px;
   text-align: left;
+  border-bottom: gray 1px dashed;
+  vertical-align: top;
 }

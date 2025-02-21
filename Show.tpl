@@ -12,8 +12,8 @@
             <td><?php echo $entity->getKey(); ?></td>
             <td>
                 <?php echo $entity->getTitle(); ?>
-                <div style="color: gray"><?php echo $entity->getSummary(); ?></div>
-                <div style="color: silver"><?php echo $entity->getData(); ?></div>
+                <div style="color: gray;font-size: x-small;"><?php echo $entity->getSummary(); ?></div>
+                <div style="color: silver;font-size: x-small;"><?php echo $entity->getData(); ?></div>
             </td>
             <td><?php echo $entity->getStatusTitle(); ?></td>
             <td><?php echo $entity->getTypeTitle(); ?></td>
