@@ -2,7 +2,9 @@
 
 -[x] Bind application with database
 -[x] Add menu block
--[ ] Add road domain
+-[x] Add road domain
+-[ ] Add autoload register f-n
+-[ ] Add exceptions
 -[ ] Update Show API method
 -[ ] Update Create API method
 -[ ] Update Edit/Save API method
