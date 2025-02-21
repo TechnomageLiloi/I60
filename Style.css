@@ -25,6 +25,9 @@ body #menu {
 body table {
   width: 100%;
 }
+body table tr:hover:not(:first-child) {
+  background-color: #dcffdb;
+}
 body table th {
   padding: 3px;
   text-align: left;
