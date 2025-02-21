@@ -22,3 +22,12 @@ body #menu {
   padding: 10px;
   background-color: lightyellow;
 }
+body table {
+  width: 100%;
+}
+body table th {
+  text-align: left;
+}
+body table td {
+  text-align: left;
+}

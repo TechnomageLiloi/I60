@@ -5,6 +5,6 @@
 -[x] Add road domain
 -[x] Add autoload register f-n
 -[x] Add exceptions block
--[ ] Update Show API method
+-[x] Update Show API method
 -[ ] Update Create API method
 -[ ] Update Edit/Save API method

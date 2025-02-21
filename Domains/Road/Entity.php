@@ -43,6 +43,11 @@ class Entity extends AbstractEntity
         return Statuses::$list[$this->getStatus()];
     }
 
+    public function getTypeTitle(): string
+    {
+        return Types::$list[$this->getType()];
+    }
+
     public function getDataElement(string $key)
     {
         $data = (array)json_decode($this->getData(), true, 512, JSON_UNESCAPED_UNICODE);

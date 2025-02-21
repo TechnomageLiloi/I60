@@ -47,10 +47,12 @@ class Application extends GeneralApplication
 
     public function apiShow(): array
     {
-        $collection = RoadManager::getTableName();
+        $collection = RoadManager::loadCollection();
 
         return [
-            'render' => $this->render(__DIR__ . '/Show.tpl')
+            'render' => $this->render(__DIR__ . '/Show.tpl', [
+                'collection' => $collection
+            ])
         ];
     }
 }

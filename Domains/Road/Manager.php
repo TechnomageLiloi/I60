@@ -16,6 +16,25 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'road';
     }
 
+    public static function loadCollection(): Collection
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where key_road between "%s 00:00:00" and "%s 23:59:59" order by key_road desc;',
+            $name, date('Y-m-d'), date('Y-m-d')
+        ));
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[] = Entity::create($row);
+        }
+
+        return $collection;
+    }
+
     /**
      * Load problem from database.
      *
