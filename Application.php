@@ -45,6 +45,13 @@ class Application extends GeneralApplication
         ];
     }
 
+
+    public function apiCreate(): array
+    {
+        RoadManager::create();
+        return [];
+    }
+
     public function apiShow(): array
     {
         $collection = RoadManager::loadCollection();

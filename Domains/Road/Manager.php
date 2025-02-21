@@ -76,12 +76,14 @@ class Manager extends DomainManager
     /**
      * Create problem in database.
      */
-    public static function create(string $RID): Entity
+    public static function create(): Entity
     {
+        $key = date('Y-m-d H:i:s');
+
         $name = self::getTableName();
         $data = [
-            'key_road' => $RID,
-            'title' => $RID,
+            'key_road' => $key,
+            'title' => 'Enter note',
             'summary' => '// summary',
             'status' => Statuses::TODO,
             'type' => Types::NOTE,

@@ -6,5 +6,5 @@
 -[x] Add autoload register f-n
 -[x] Add exceptions block
 -[x] Update Show API method
--[ ] Update Create API method
--[ ] Update Edit/Save API method
+-[x] Add Create API method
+-[ ] Add Edit/Save API method

@@ -19,5 +19,21 @@ let Requests = {
         }, function () {
 
         });
+    },
+
+    create: function ()
+    {
+        if(!confirm('Are you sure?'))
+        {
+            return;
+        }
+
+        API.request('apiCreate', {
+            'debug': true
+        }, function (data) {
+            Requests.show();
+        }, function () {
+
+        });
     }
 };
