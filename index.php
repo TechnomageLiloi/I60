@@ -11,7 +11,8 @@ $app = new Application([
     'scripts' => [
         '/Requests.js'
     ],
-    "database" => json_decode(file_get_contents('./Database.json'), true)
+    'connection' => json_decode(file_get_contents('./Database.json'), true),
+    'prefix' => 'i60_'
 ]);
 
 echo $app->compile();
