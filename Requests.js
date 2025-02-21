@@ -8,5 +8,16 @@ let Requests = {
         }, function () {
 
         });
+    },
+
+    show: function ()
+    {
+        API.request('apiShow', {
+            'debug': true
+        }, function (data) {
+            $('#layout').html(data.render);
+        }, function () {
+
+        });
     }
 };

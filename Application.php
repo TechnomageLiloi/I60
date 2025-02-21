@@ -12,4 +12,11 @@ class Application extends GeneralApplication
             'render' => $this->render(__DIR__ . '/Layout.tpl')
         ];
     }
+
+    public function apiShow(): array
+    {
+        return [
+            'render' => $this->render(__DIR__ . '/Show.tpl')
+        ];
+    }
 }
