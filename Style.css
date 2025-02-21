@@ -6,3 +6,19 @@ body {
   font-family: monospace;
   background-color: white;
 }
+body a.butn {
+  border: red 1px solid;
+  padding: 2px;
+  background-color: #ffebeb;
+  border-radius: 5px;
+  text-decoration: none;
+  color: red;
+}
+body a.butn:hover {
+  background-color: #ffffeb;
+}
+body #menu {
+  text-align: center;
+  padding: 10px;
+  background-color: lightyellow;
+}

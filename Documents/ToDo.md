@@ -1,7 +1,7 @@
 # To Do
 
 -[x] Bind application with database
--[ ] Add menu block
+-[x] Add menu block
 -[ ] Add road domain
 -[ ] Update Show API method
 -[ ] Update Create API method
