@@ -62,4 +62,30 @@ class Application extends GeneralApplication
             ])
         ];
     }
+
+    public function apiEdit(): array
+    {
+        $entity = RoadManager::load($_POST['parameters']['key']);
+
+        return [
+            'render' => $this->render(__DIR__ . '/Edit.tpl', [
+                'entity' => $entity
+            ])
+        ];
+    }
+
+    public function apiSave(): array
+    {
+        $entity = RoadManager::load($_POST['parameters']['key']);
+
+        $entity->setTitle($_POST['parameters']['title']);
+        $entity->setSummary($_POST['parameters']['summary']);
+        $entity->setStatus($_POST['parameters']['status']);
+        $entity->setType($_POST['parameters']['type']);
+        $entity->setData($_POST['parameters']['data']);
+
+        $entity->save();
+
+        return [];
+    }
 }

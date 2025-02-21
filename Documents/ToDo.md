@@ -7,4 +7,4 @@
 -[x] Add exceptions block
 -[x] Update Show API method
 -[x] Add Create API method
--[ ] Add Edit/Save API method
+-[x] Add Edit/Save API method
