@@ -5,14 +5,15 @@ namespace Liloi\I60;
 include_once __DIR__ . '/RuneFramework.phar';
 include_once __DIR__ . '/Application.php';
 
-$app = new Application([
+$config = array_merge([
     'title' => 'Interstate 60',
     'start' => 'Requests.layout();',
     'scripts' => [
         '/Requests.js'
     ],
-    'connection' => json_decode(file_get_contents('./Database.json'), true),
     'prefix' => 'i60_'
-]);
+], json_decode(file_get_contents('./Config.json'), true));
+
+$app = new Application($config);
 
 echo $app->compile();
