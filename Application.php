@@ -4,6 +4,8 @@ namespace Liloi\I60;
 
 use Rune\Application\General as GeneralApplication;
 use Liloi\I60\Domains\Road\Manager as RoadManager;
+use Liloi\I60\Domains\Road\Statuses as RoadStatus;
+use Liloi\I60\Domains\Road\Types as RoadTypes;
 use Liloi\I60\Domains\Manager as DomainsManager;
 use Liloi\Config\Pool;
 use Liloi\Config\Sparkle;
@@ -69,7 +71,9 @@ class Application extends GeneralApplication
 
         return [
             'render' => $this->render(__DIR__ . '/Edit.tpl', [
-                'entity' => $entity
+                'entity' => $entity,
+                'statuses' => RoadStatus::$list,
+                'types' => RoadTypes::$list,
             ])
         ];
     }
