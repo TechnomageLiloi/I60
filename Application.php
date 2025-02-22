@@ -43,7 +43,9 @@ class Application extends GeneralApplication
     public function apiLayout(): array
     {
         return [
-            'render' => $this->render(__DIR__ . '/Layout.tpl')
+            'render' => $this->render(__DIR__ . '/Layout.tpl', [
+                'config' => $this->getConfig()
+            ]),
         ];
     }
 
