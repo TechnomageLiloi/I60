@@ -78,4 +78,9 @@ class Entity extends AbstractEntity
         $data = (array)json_decode($this->getData());
         return json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }
+
+    public function getTimestamp(string $format = "Y-m-d H:i:s")
+    {
+        return date($format, strtotime($this->getKey()));
+    }
 }

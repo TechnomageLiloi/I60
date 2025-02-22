@@ -9,7 +9,7 @@
         </tr>
     <?php foreach($collection as $entity): ?>
         <tr>
-            <td><?php echo $entity->getKey(); ?></td>
+            <td><?php echo $entity->getTimestamp("Y F d, g:i A"); ?></td>
             <td>
                 <?php echo $entity->getTitle(); ?>
                 <div style="color: gray;font-size: x-small;"><?php echo $entity->getSummary(); ?></div>
