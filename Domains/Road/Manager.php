@@ -84,7 +84,7 @@ class Manager extends DomainManager
         $data = [
             'key_road' => $key,
             'title' => 'Enter note',
-            'summary' => '// summary',
+            'summary' => '-',
             'status' => Statuses::TODO,
             'type' => Types::NOTE,
             'data' => '{}'
