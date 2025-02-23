@@ -68,5 +68,65 @@ let Requests = {
         }, function () {
 
         });
+    },
+
+    Problems: {
+
+        create: function () {
+            if (!confirm('Are you sure?')) {
+                return;
+            }
+
+            API.request('apiProblemCreate', {
+                'debug': true
+            }, function (data) {
+                Requests.show();
+            }, function () {
+
+            });
+        },
+
+        edit: function (key)
+        {
+            API.request('apiProblemEdit', {
+                'key': key
+            }, function (data) {
+                $('#layout').html(data.render);
+            }, function () {
+
+            });
+        },
+
+        save: function (key)
+        {
+            if(!confirm('Are you sure?'))
+            {
+                return;
+            }
+
+            const jq_block = $('#edit');
+            API.request('apiProblemSave', {
+                key: key,
+                title: jq_block.find('[name=title]').val()
+            }, function (data) {
+                Requests.show();
+            }, function () {
+
+            });
+        },
+
+        remove: function () {
+            if (!confirm('Are you sure?')) {
+                return;
+            }
+
+            API.request('apiProblemRemove', {
+                'debug': true
+            }, function (data) {
+                Requests.show();
+            }, function () {
+
+            });
+        }
     }
 };

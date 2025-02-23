@@ -3,6 +3,7 @@
 namespace Liloi\I60;
 
 use Rune\Application\General as GeneralApplication;
+use Liloi\I60\Domains\Problems\Manager as ProblemsManager;
 use Liloi\I60\Domains\Road\Manager as RoadManager;
 use Liloi\I60\Domains\Road\Statuses as RoadStatus;
 use Liloi\I60\Domains\Road\Types as RoadTypes;
@@ -49,7 +50,6 @@ class Application extends GeneralApplication
         ];
     }
 
-
     public function apiCreate(): array
     {
         RoadManager::create();
@@ -91,6 +91,40 @@ class Application extends GeneralApplication
         $entity->setData($_POST['parameters']['data']);
 
         $entity->save();
+
+        return [];
+    }
+
+    public function apiProblemCreate(): array
+    {
+        ProblemsManager::create();
+        return [];
+    }
+
+    public function apiProblemEdit(): array
+    {
+        $entity = ProblemsManager::load($_POST['parameters']['key']);
+
+        return [
+            'render' => $this->render(__DIR__ . '/ProblemEdit.tpl', [
+                'entity' => $entity
+            ])
+        ];
+    }
+
+    public function apiProblemSave(): array
+    {
+        $entity = ProblemsManager::load($_POST['parameters']['key']);
+        $entity->setTitle($_POST['parameters']['title']);
+        $entity->save();
+
+        return [];
+    }
+
+    public function apiProblemRemove(): array
+    {
+        $entity = ProblemsManager::load($_POST['parameters']['key']);
+        $entity->remove();
 
         return [];
     }
