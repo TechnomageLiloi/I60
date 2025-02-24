@@ -115,13 +115,13 @@ let Requests = {
             });
         },
 
-        remove: function () {
+        remove: function (key) {
             if (!confirm('Are you sure?')) {
                 return;
             }
 
             API.request('apiProblemRemove', {
-                'debug': true
+                'key': key
             }, function (data) {
                 Requests.show();
             }, function () {

@@ -74,6 +74,19 @@ class Manager extends DomainManager
     }
 
     /**
+     * Remove problem from database.
+     *
+     * @param Entity $entity
+     */
+    public static function remove(Entity $entity): void
+    {
+        $name = self::getTableName();
+        $key = $entity->getKey();
+
+        self::getAdapter()->delete($name, sprintf('key_problem="%s"', $key));
+    }
+
+    /**
      * Create problem in database.
      */
     public static function create(): Entity

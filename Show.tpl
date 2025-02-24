@@ -13,7 +13,8 @@
                 <?php echo $entity->getTitle(); ?>
             </td>
             <td style="text-align: right;">
-                <a href="javascript:void(0)" class="butn" onclick="Requests.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
+                <a href="javascript:void(0)" class="butn" onclick="Requests.Problems.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
+                <a href="javascript:void(0)" class="butn" onclick="Requests.Problems.remove('<?php echo $entity->getKey(); ?>');">Remove</a>
             </td>
         </tr>
         <?php endforeach; ?>

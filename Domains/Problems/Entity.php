@@ -21,6 +21,11 @@ class Entity extends AbstractEntity
         Manager::save($this);
     }
 
+    public function remove(): void
+    {
+        Manager::remove($this);
+    }
+
     public function getTimestamp(string $format = "Y-m-d H:i:s")
     {
         return date($format, strtotime($this->getKey()));
