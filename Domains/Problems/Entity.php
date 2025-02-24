@@ -13,7 +13,7 @@ class Entity extends AbstractEntity
 {
     public function getKey(): string
     {
-        return $this->getField('key_road');
+        return $this->getField('key_problem');
     }
 
     public function save(): void

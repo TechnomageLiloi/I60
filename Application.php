@@ -59,10 +59,12 @@ class Application extends GeneralApplication
     public function apiShow(): array
     {
         $collection = RoadManager::loadCollection();
+        $problems = ProblemsManager::loadCollection();
 
         return [
             'render' => $this->render(__DIR__ . '/Show.tpl', [
-                'collection' => $collection
+                'collection' => $collection,
+                'problems' => $problems
             ])
         ];
     }
