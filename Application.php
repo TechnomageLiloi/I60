@@ -80,12 +80,6 @@ class Application extends GeneralApplication
         ];
     }
 
-    public function apiProblemCreate(): array
-    {
-        ProblemsManager::create();
-        return [];
-    }
-
     public function apiProblemEdit(): array
     {
         $entity = ProblemsManager::load($_POST['parameters']['key']);
