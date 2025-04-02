@@ -79,15 +79,4 @@ class Application extends GeneralApplication
             ]),
         ];
     }
-
-    public function apiProblemEdit(): array
-    {
-        $entity = ProblemsManager::load($_POST['parameters']['key']);
-
-        return [
-            'render' => $this->render(__DIR__ . '/ProblemEdit.tpl', [
-                'entity' => $entity
-            ])
-        ];
-    }
 }
