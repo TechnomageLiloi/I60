@@ -10,6 +10,7 @@ use Liloi\I60\Domains\Road\Types as RoadTypes;
 use Liloi\I60\Domains\Manager as DomainsManager;
 use Liloi\Config\Pool;
 use Liloi\Config\Sparkle;
+use Liloi\I60\Exceptions\NotFoundException;
 
 class Application extends GeneralApplication
 {
@@ -39,6 +40,27 @@ class Application extends GeneralApplication
         Pool::getSingleton()->set(new Sparkle('connection', function() use ($config) { return $config['connection'];}));
         Pool::getSingleton()->set(new Sparkle('prefix', function() use ($config) { return $config['prefix'];}));
         DomainsManager::setConfig(Pool::getSingleton());
+    }
+
+    /**
+     * Gets response of API method.
+     *
+     * @param string $name API method name.
+     * @param array $parameters API parameters.
+     * @return array API
+     * @throws \Exception
+     */
+    public function api(string $name, array $parameters): array
+    {
+        if(empty($parameters)) {
+            $parameters = [];
+        }
+
+        if(method_exists($this, $name)) {
+            return $this->$name($parameters);
+        }
+
+        throw new NotFoundException('No API method.');
     }
 
     public function apiLayout(): array
