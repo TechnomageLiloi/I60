@@ -8,7 +8,6 @@ use Liloi\I60\API\Method as AbstractMethod;
 
 class Method extends AbstractMethod
 {
-
     public function execute(): array
     {
         $collection = RoadManager::loadCollection();
