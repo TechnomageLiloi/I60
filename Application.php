@@ -60,7 +60,7 @@ class Application extends GeneralApplication
             return $this->$name($parameters);
         }
 
-        $classMethod = self::PREFIX . '\\API\\' . ucfirst($name) . '\\Method';
+        $classMethod = self::PREFIX . '\\API\\' . ucfirst(str_replace('.', '\\', $name)) . '\\Method';
 
         if(class_exists($classMethod))
         {
