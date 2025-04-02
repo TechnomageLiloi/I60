@@ -31,16 +31,16 @@ create table i60_levels
 
 INSERT INTO i60_levels (title, status, program, goal) VALUES ('Teacher', 1, '-', DEFAULT);
 
-create table i60_campaigns
+create table i60_games
 (
-    key_campaign smallint unsigned auto_increment,
+    key_game smallint unsigned auto_increment,
     key_level tinyint unsigned not null,
     title varchar(100) not null,
     status tinyint unsigned default 1 not null,
     program text not null,
-    constraint i60_campaigns_pk
-        primary key (key_campaign),
-    constraint i60_campaigns_i60_levels_key_level_fk
+    constraint i60_games_pk
+        primary key (key_game),
+    constraint i60_games_i60_levels_key_level_fk
         foreign key (key_level) references i60_levels (key_level)
             on update cascade on delete cascade
 );
