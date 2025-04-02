@@ -50,12 +50,26 @@ create table i60_quests
     key_quest bigint unsigned auto_increment,
     key_game smallint unsigned not null,
     title varchar(250) not null,
-    status tinyint unsigned not null,
+    status tinyint unsigned default 1 not null,
     program text not null,
     constraint i60_quests_pk
         primary key (key_quest),
     constraint i60_quests_i60_games_key_game_fk
         foreign key (key_game) references i60_games (key_game)
+            on update cascade on delete cascade
+);
+
+create table i60_journals
+(
+    key_journal bigint unsigned auto_increment,
+    key_quest bigint unsigned not null,
+    title varchar(250) not null,
+    status tinyint unsigned default 1 not null,
+    data json not null,
+    constraint i60_journals_pk
+        primary key (key_journal),
+    constraint i60_journals_i60_quests_key_quest_fk
+        foreign key (key_quest) references i60_quests (key_quest)
             on update cascade on delete cascade
 );
 
