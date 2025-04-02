@@ -80,21 +80,6 @@ class Application extends GeneralApplication
         ];
     }
 
-    public function apiSave(): array
-    {
-        $entity = RoadManager::load($_POST['parameters']['key']);
-
-        $entity->setTitle($_POST['parameters']['title']);
-        $entity->setSummary($_POST['parameters']['summary']);
-        $entity->setStatus($_POST['parameters']['status']);
-        $entity->setType($_POST['parameters']['type']);
-        $entity->setData($_POST['parameters']['data']);
-
-        $entity->save();
-
-        return [];
-    }
-
     public function apiProblemCreate(): array
     {
         ProblemsManager::create();

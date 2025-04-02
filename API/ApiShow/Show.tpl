@@ -35,7 +35,7 @@
             <td><?php echo $entity->getTimestamp("Y F d, g:i A"); ?></td>
             <td>
                 <?php echo $entity->getTitle(); ?>
-                <div style="color: gray;font-size: x-small;"><?php echo $entity->getSummary(); ?></div>
+                <div style="color: gray;font-size: x-small;"><?php echo $entity->parseSummary(); ?></div>
                 <div style="color: silver;font-size: x-small;"><?php echo $entity->getData(); ?></div>
             </td>
             <td><?php echo $entity->getStatusTitle(); ?></td>
