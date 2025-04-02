@@ -14,6 +14,9 @@ use Liloi\Stylo\Parser;
  *
  * @method string getProgram()
  * @method void setProgram(string $value)
+ *
+ * @method string getData()
+ * @method void setData(string $value)
  */
 class Entity extends AbstractEntity
 {

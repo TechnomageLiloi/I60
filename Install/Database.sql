@@ -25,11 +25,12 @@ create table i60_levels
     status tinyint unsigned not null,
     program text null,
     goal varchar(250) not null default '-',
+    data json not null,
     constraint i60_levels_pk
         primary key (key_level)
 );
 
-INSERT INTO i60_levels (title, status, program, goal) VALUES ('Teacher', 1, '-', DEFAULT);
+INSERT INTO i60_levels (title, status, program, goal, data) VALUES ('Teacher', 1, '-', DEFAULT, '{}');
 
 create table i60_games
 (
@@ -38,6 +39,7 @@ create table i60_games
     title varchar(100) not null,
     status tinyint unsigned default 1 not null,
     program text not null,
+    data json not null,
     constraint i60_games_pk
         primary key (key_game),
     constraint i60_games_i60_levels_key_level_fk
@@ -52,6 +54,7 @@ create table i60_quests
     title varchar(250) not null,
     status tinyint unsigned default 1 not null,
     program text not null,
+    data json not null,
     constraint i60_quests_pk
         primary key (key_quest),
     constraint i60_quests_i60_games_key_game_fk
