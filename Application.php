@@ -80,19 +80,6 @@ class Application extends GeneralApplication
         ];
     }
 
-    public function apiEdit(): array
-    {
-        $entity = RoadManager::load($_POST['parameters']['key']);
-
-        return [
-            'render' => $this->render(__DIR__ . '/Edit.tpl', [
-                'entity' => $entity,
-                'statuses' => RoadStatus::$list,
-                'types' => RoadTypes::$list,
-            ])
-        ];
-    }
-
     public function apiSave(): array
     {
         $entity = RoadManager::load($_POST['parameters']['key']);
