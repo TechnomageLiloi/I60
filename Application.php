@@ -80,12 +80,6 @@ class Application extends GeneralApplication
         ];
     }
 
-    public function apiCreate(): array
-    {
-        RoadManager::create();
-        return [];
-    }
-
     public function apiEdit(): array
     {
         $entity = RoadManager::load($_POST['parameters']['key']);
