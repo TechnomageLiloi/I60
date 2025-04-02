@@ -65,6 +65,7 @@ create table i60_journals
     key_quest bigint unsigned not null,
     title varchar(250) not null,
     status tinyint unsigned default 1 not null,
+    trophy smallint signed default 0,
     data json not null,
     constraint i60_journals_pk
         primary key (key_journal),
