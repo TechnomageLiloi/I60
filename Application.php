@@ -60,6 +60,14 @@ class Application extends GeneralApplication
             return $this->$name($parameters);
         }
 
+        $classMethod = self::PREFIX . '\\API\\' . ucfirst($name) . '\\Method';
+
+        if(class_exists($classMethod))
+        {
+            $apiMethod = new $classMethod();
+            return $apiMethod->execute();
+        }
+
         throw new NotFoundException('No API method.');
     }
 
@@ -76,19 +84,6 @@ class Application extends GeneralApplication
     {
         RoadManager::create();
         return [];
-    }
-
-    public function apiShow(): array
-    {
-        $collection = RoadManager::loadCollection();
-        $problems = ProblemsManager::loadCollection();
-
-        return [
-            'render' => $this->render(__DIR__ . '/Show.tpl', [
-                'collection' => $collection,
-                'problems' => $problems
-            ])
-        ];
     }
 
     public function apiEdit(): array
