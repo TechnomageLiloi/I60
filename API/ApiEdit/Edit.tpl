@@ -7,7 +7,7 @@
         </tr>
         <tr>
             <td>Summary</td>
-            <td><input type="text" name="summary" value="<?php echo $entity->getSummary(); ?>"></td>
+            <td><textarea name="summary"><?php echo $entity->getSummary(); ?></textarea></td>
         </tr>
 
         <tr><td>Status</td><td>

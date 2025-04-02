@@ -39,3 +39,13 @@ body table td {
   border-bottom: gray 1px dashed;
   vertical-align: top;
 }
+body table input,
+body table textarea,
+body table select {
+  border: silver 1px solid;
+  width: 90%;
+  background-color: lightyellow;
+}
+body table textarea {
+  height: 300px;
+}
