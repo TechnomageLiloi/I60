@@ -45,3 +45,17 @@ create table i60_games
             on update cascade on delete cascade
 );
 
+create table i60_quests
+(
+    key_quest bigint unsigned auto_increment,
+    key_game smallint unsigned not null,
+    title varchar(250) not null,
+    status tinyint unsigned not null,
+    program text not null,
+    constraint i60_quests_pk
+        primary key (key_quest),
+    constraint i60_quests_i60_games_key_game_fk
+        foreign key (key_game) references i60_games (key_game)
+            on update cascade on delete cascade
+);
+
