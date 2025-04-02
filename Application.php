@@ -90,12 +90,4 @@ class Application extends GeneralApplication
             ])
         ];
     }
-
-    public function apiProblemRemove(): array
-    {
-        $entity = ProblemsManager::load($_POST['parameters']['key']);
-        $entity->remove();
-
-        return [];
-    }
 }
