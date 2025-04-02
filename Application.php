@@ -91,15 +91,6 @@ class Application extends GeneralApplication
         ];
     }
 
-    public function apiProblemSave(): array
-    {
-        $entity = ProblemsManager::load($_POST['parameters']['key']);
-        $entity->setTitle($_POST['parameters']['title']);
-        $entity->save();
-
-        return [];
-    }
-
     public function apiProblemRemove(): array
     {
         $entity = ProblemsManager::load($_POST['parameters']['key']);
