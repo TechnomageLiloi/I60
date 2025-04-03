@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\I60\API\ApiShow;
+namespace Liloi\I60\API\Show;
 
 use Liloi\I60\API\Method as AbstractMethod;
 
@@ -10,8 +10,7 @@ class Method extends AbstractMethod
     {
         return [
             'render' => $this->render(__DIR__ . '/Show.tpl', [
-                'collection' => $collection,
-                'problems' => $problems
+
             ])
         ];
     }
