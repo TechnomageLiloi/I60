@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\I60\Domains\Games;
+namespace Liloi\I60\Domains\Problems;
 
 use Liloi\Tools\Collection as AbstractCollection;
 

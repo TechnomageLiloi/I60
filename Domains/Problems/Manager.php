@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\I60\Domains\Games;
+namespace Liloi\I60\Domains\Problems;
 
 use Liloi\Rune\Domain\Manager as DomainManager;
 use Liloi\Rune\Domain\Config\Manager as ConfigManager;
@@ -15,7 +15,7 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'games';
+        return self::getTablePrefix() . 'problems';
     }
 
     public static function loadCollection(): Collection
@@ -23,7 +23,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s order by key_game asc;',
+            'select * from %s order by key_problem asc;',
             $name
         ));
 
@@ -42,29 +42,12 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_game="%s"',
+            'select * from %s where key_problem="%s"',
             $name,
             $key
         ));
 
         return Entity::create($row);
-    }
-
-    public static function loadLevel(): int
-    {
-        $name = self::getTableName();
-
-        $level = self::getAdapter()->getSingle(sprintf(
-            'select key_game from %s where status="%s" order by key_game desc limit 1',
-            $name, Statuses::DEFENDED
-        ));
-
-        if($level === false)
-        {
-            return 0;
-        }
-
-        return (int)$level;
     }
 
     public static function save(Entity $entity): void
@@ -73,22 +56,22 @@ class Manager extends DomainManager
         $data = $entity->get();
 
         // @todo: Get param name from const.
-        $key = $data['key_game'];
-        unset($data['key_game']);
+        $key = $data['key_problem'];
+        unset($data['key_problem']);
 
         self::getAdapter()->update(
             $name,
             $data,
-            sprintf('key_game = "%s"', $key)
+            sprintf('key_problem = "%s"', $key)
         );
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create(string $keyLevel): void
+    public static function create(string $keyLesson): void
     {
         $name = self::getTableName();
         self::getAdapter()->insert($name, [
-            'key_level' => $keyLevel,
+            'key_lesson' => $keyLesson,
             'title' => 'Enter the title',
             'status' => Statuses::TODO,
             'program' => '// comment'

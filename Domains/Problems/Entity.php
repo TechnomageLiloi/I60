@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\I60\Domains\Quests;
+namespace Liloi\I60\Domains\Problems;
 
 use Liloi\Tools\Entity as AbstractEntity;
 use Liloi\Stylo\Parser;
@@ -22,7 +22,7 @@ class Entity extends AbstractEntity
 {
     public function getKey(): string
     {
-        return $this->getField('key_game');
+        return $this->getField('key_problem');
     }
 
     public function save(): void

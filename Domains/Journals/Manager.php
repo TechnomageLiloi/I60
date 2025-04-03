@@ -67,11 +67,11 @@ class Manager extends DomainManager
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create(string $keyQuest): void
+    public static function create(string $keyProblem): void
     {
         $name = self::getTableName();
         self::getAdapter()->insert($name, [
-            'key_quest' => $keyQuest,
+            'key_problem' => $keyProblem,
             'title' => 'Enter the title',
             'status' => Statuses::TODO,
             'program' => '// comment'

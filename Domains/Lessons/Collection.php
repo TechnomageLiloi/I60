@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\I60\Domains\Quests;
+namespace Liloi\I60\Domains\Lessons;
 
 use Liloi\Tools\Collection as AbstractCollection;
 
