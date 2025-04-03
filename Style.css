@@ -5,6 +5,7 @@ body {
   margin: 0;
   font-family: monospace;
   background-color: white;
+  height: 100%;
 }
 body a.butn {
   border: red 1px solid;
@@ -22,11 +23,11 @@ body #menu {
   padding: 10px;
   background-color: lightyellow;
 }
+body #page {
+  height: 100%;
+}
 body table {
   width: 100%;
-}
-body table tr:hover:not(:first-child) {
-  background-color: #dcffdb;
 }
 body table th {
   padding: 3px;
