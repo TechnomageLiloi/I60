@@ -1,0 +1,19 @@
+#modules-levels-collection {
+  padding: 10px;
+  font-size: x-large;
+}
+#modules-levels-collection table {
+  width: 100%;
+}
+#modules-levels-collection table th {
+  text-align: left;
+}
+#modules-levels-collection table tr.defended-degree {
+  color: green;
+}
+#modules-levels-collection table tr.defending-now-degree {
+  color: orange;
+}
+#modules-levels-collection table tr.not-defended-degree {
+  color: red;
+}
