@@ -12,7 +12,7 @@
     }
 </style>
 <div id="ticket-edit">
-    <a href="javascript:void(0)" onclick="Rune.Levels.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" onclick="Requests.Levels.save('<?php echo $entity->getKey(); ?>');">Save</a>
     <hr/>
     <table style="width: 100%;">
         <tr>
@@ -35,5 +35,5 @@
         <tr><td>Program</td><td><textarea name="program"><?php echo $entity->getProgram(); ?></textarea></td></tr>
     </table>
     <hr/>
-    <a href="javascript:void(0)" onclick="Rune.Levels.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" onclick="Requests.Levels.save('<?php echo $entity->getKey(); ?>');">Save</a>
 </div>

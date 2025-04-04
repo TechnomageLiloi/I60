@@ -37,28 +37,12 @@ Requests.Levels = {
         });
     },
 
-    remove: function (key)
-    {
-        if(!confirm('Are you sure?'))
-        {
-            return;
-        }
-
-        API.request('Levels.Remove', {
-            'key': key
-        }, function (data) {
-            Requests.Levels.getCollection();
-        }, function () {
-
-        });
-    },
-
     edit: function (key)
     {
         API.request('Levels.Edit', {
             'key': key
         }, function (data) {
-            $('#page').html(data.render);
+            $('#layout').html(data.render);
         }, function () {
 
         });
@@ -79,7 +63,7 @@ Requests.Levels = {
             'status': jq_block.find('[name="status"]').val(),
             'program': jq_block.find('[name="program"]').val()
         }, function (data) {
-            Requests.Levels.getCollection();
+            Requests.show();
         }, function () {
 
         });
