@@ -13,9 +13,9 @@ Requests.Lessons = {
     show: function (key)
     {
         API.request('Lessons.Show', {
-            'key': key
+            'key_level': key
         }, function (data) {
-            $('#page').html(data.render);
+            $('#layout').html(data.render);
         }, function () {
 
         });
@@ -42,7 +42,7 @@ Requests.Lessons = {
         API.request('Lessons.Edit', {
             'key_level': key
         }, function (data) {
-            $('#page').html(data.render);
+            $('#layout').html(data.render);
         }, function () {
 
         });
@@ -62,7 +62,7 @@ Requests.Lessons = {
             'status': jq_block.find('[name="status"]').val(),
             'program': jq_block.find('[name="program"]').val()
         }, function (data) {
-            Requests.show();
+            window.location.reload();
         }, function () {
 
         });
