@@ -28,7 +28,7 @@ class Entity extends AbstractEntity
 {
     public function getKey(): string
     {
-        return $this->getField('key_game');
+        return $this->getField('key_journal');
     }
 
     public function save(): void

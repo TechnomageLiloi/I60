@@ -74,7 +74,9 @@ class Manager extends DomainManager
             'key_problem' => $keyProblem,
             'title' => 'Enter the title',
             'status' => Statuses::TODO,
-            'program' => '// comment'
+            'start' => date('Y-m-d H:i:s'),
+            'finish' => date('Y-m-d H:i:s'),
+            'data' => '{}'
         ]);
     }
 }

@@ -21,7 +21,7 @@ Requests.Journals = {
         });
     },
 
-    create: function ()
+    create: function (key_problem)
     {
         if(!confirm('Are you sure?'))
         {
@@ -29,9 +29,9 @@ Requests.Journals = {
         }
 
         API.request('Journals.Create', {
-            'debug': true
+            'key_problem': key_problem
         }, function (data) {
-            Requests.Journals.getCollection();
+            Requests.Journals.getCollection(key_problem);
         }, function () {
 
         });

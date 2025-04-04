@@ -1,5 +1,5 @@
 <div id="modules-levels-collection">
-    <a href="javascript:void(0)" class="butn" onclick="Rune.Journals.create(<?php echo $key_problem; ?>);">Create level</a>
+    <a href="javascript:void(0)" class="butn" onclick="Requests.Journals.create(<?php echo $key_problem; ?>);">Create level</a>
 
     <?php if($journals->count()): ?>
         <hr/>
@@ -22,8 +22,8 @@
                         <?php echo $entity->getStatusTitle(); ?>
                     </td>
                     <td>
-                        <a href="javascript:void(0)" class="butn" onclick="Rune.Journals.show('<?php echo $entity->getKey(); ?>');">Show</a>
-                        <a href="javascript:void(0)" class="butn" onclick="Rune.Journals.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
+                        <a href="javascript:void(0)" class="butn" onclick="Requests.Journals.show('<?php echo $entity->getKey(); ?>');">Show</a>
+                        <a href="javascript:void(0)" class="butn" onclick="Requests.Journals.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
