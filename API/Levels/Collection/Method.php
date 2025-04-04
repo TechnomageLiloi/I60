@@ -2,9 +2,7 @@
 
 namespace Liloi\I60\API\Levels\Collection;
 
-use Liloi\API\Response;
 use Liloi\I60\API\Method as AbstractMethod;
-use Liloi\I60\Domains\Lessons\Manager as LessonsManager;
 use Liloi\I60\Domains\Levels\Manager as LevelsManager;
 
 /**

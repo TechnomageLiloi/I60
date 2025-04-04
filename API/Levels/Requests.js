@@ -15,7 +15,7 @@ Requests.Levels = {
         API.request('Levels.Show', {
             'key': key
         }, function (data) {
-            $('#page').html(data.render);
+            $('#layout').html(data.render);
         }, function () {
 
         });

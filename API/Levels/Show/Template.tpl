@@ -35,11 +35,11 @@
             <?php echo $entity->getTitle(); ?>
         </td>
         <td style="text-align: right;">
-            <a href="javascript:void(0)" onclick="Rune.Levels.edit('<?php echo $entity->getKey(); ?>');">Edit</a> &diams;
+            <a href="javascript:void(0)" onclick="Requests.Levels.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
         </td>
     </tr>
     <tr>
-        <td>
+        <td colspan="2">
             <?php echo $entity->getProgramParse(); ?>
         </td>
     </tr>
