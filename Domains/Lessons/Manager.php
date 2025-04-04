@@ -91,7 +91,8 @@ class Manager extends DomainManager
             'key_level' => $keyLevel,
             'title' => 'Enter the title',
             'status' => Statuses::TODO,
-            'program' => '// comment'
+            'program' => '// comment',
+            'data' => '{}'
         ]);
     }
 }

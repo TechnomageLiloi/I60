@@ -21,7 +21,7 @@ Requests.Lessons = {
         });
     },
 
-    create: function ()
+    create: function (keyLevel)
     {
         if(!confirm('Are you sure?'))
         {
@@ -29,7 +29,7 @@ Requests.Lessons = {
         }
 
         API.request('Lessons.Create', {
-            'debug': true
+            'key_level': keyLevel
         }, function (data) {
             Requests.Lessons.getCollection();
         }, function () {

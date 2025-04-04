@@ -35,7 +35,7 @@
             <?php echo $entity->getTitle(); ?>
         </td>
         <td style="text-align: right;">
-            <a href="javascript:void(0)" onclick="Requests.Levels.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
+            <a href="javascript:void(0)" class="butn" onclick="Requests.Levels.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
         </td>
     </tr>
     <tr>

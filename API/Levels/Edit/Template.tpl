@@ -12,8 +12,8 @@
     }
 </style>
 <div id="ticket-edit">
-    <a href="javascript:void(0)" onclick="Requests.Levels.save('<?php echo $entity->getKey(); ?>');">Save</a>
-    <a href="javascript:void(0)" onclick="Requests.Levels.show('<?php echo $entity->getKey(); ?>');">Show</a>
+    <a href="javascript:void(0)" class="butn" onclick="Requests.Levels.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" class="butn" onclick="Requests.Levels.show('<?php echo $entity->getKey(); ?>');">Show</a>
     <hr/>
     <table style="width: 100%;">
         <tr>
