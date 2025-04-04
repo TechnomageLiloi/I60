@@ -1,8 +1,8 @@
 Requests.Problems = {
-    getCollection: function (keyProblem)
+    getCollection: function (key_lesson)
     {
         API.request('Problems.Collection', {
-            'key_problem': keyProblem
+            'key_lesson': key_lesson
         }, function (data) {
             $('#wrap-problems').html(data.render);
         }, function () {
@@ -13,7 +13,7 @@ Requests.Problems = {
     show: function (key)
     {
         API.request('Problems.Show', {
-            'key': key
+            'key_problem': key
         }, function (data) {
             $('#layout').html(data.render);
         }, function () {
@@ -37,26 +37,10 @@ Requests.Problems = {
         });
     },
 
-    remove: function (key)
-    {
-        if(!confirm('Are you sure?'))
-        {
-            return;
-        }
-
-        API.request('Problems.Remove', {
-            'key': key
-        }, function (data) {
-            Requests.Problems.getCollection();
-        }, function () {
-
-        });
-    },
-
-    edit: function (key)
+    edit: function (key_problem)
     {
         API.request('Problems.Edit', {
-            'key': key
+            'key_problem': key_problem
         }, function (data) {
             $('#layout').html(data.render);
         }, function () {
@@ -64,7 +48,7 @@ Requests.Problems = {
         });
     },
 
-    save: function (key)
+    save: function (key_problem)
     {
         if(!confirm('Are you sure?'))
         {
@@ -73,13 +57,12 @@ Requests.Problems = {
 
         const jq_block = $('#ticket-edit');
         API.request('Problems.Save', {
-            'key': key,
+            'key_problem': key_problem,
             'title': jq_block.find('[name="title"]').val(),
-            'goal': jq_block.find('[name="goal"]').val(),
             'status': jq_block.find('[name="status"]').val(),
             'program': jq_block.find('[name="program"]').val()
         }, function (data) {
-            Requests.Problems.getCollection();
+            window.location.reload();
         }, function () {
 
         });

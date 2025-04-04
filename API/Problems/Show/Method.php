@@ -2,14 +2,14 @@
 
 namespace Liloi\I60\API\Problems\Show;
 
-use Liloi\Rune\Modules\Levels\Domain\Levels\Manager;
 use Liloi\I60\API\Method as AbstractMethod;
+use Liloi\I60\Domains\Problems\Manager as ProblemsManager;
 
 class Method extends AbstractMethod
 {
     public function execute(): array
     {
-        $entity = Manager::load($_POST['parameters']['key']);
+        $entity = ProblemsManager::load($_POST['parameters']['key_problem']);
 
         return [
             'render' => $this->render(__DIR__ . '/Template.tpl', [

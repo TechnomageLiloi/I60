@@ -13,13 +13,13 @@ class Method extends AbstractMethod
 {
     public function execute(): array
     {
-        $keyProblem = $_POST['parameters']['key_problem'];
-        $problems = ProblemsManager::loadCollection($keyProblem);
+        $key_lesson = $_POST['parameters']['key_lesson'];
+        $problems = ProblemsManager::loadCollection($key_lesson);
 
         return [
             'render' => $this->render(__DIR__ . '/Template.tpl', [
                 'problems' => $problems,
-                'key_problem' => $keyProblem,
+                'key_problem' => $key_lesson,
             ])
         ];
     }
