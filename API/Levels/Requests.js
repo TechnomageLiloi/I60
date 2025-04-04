@@ -42,7 +42,7 @@ Requests.Levels = {
         API.request('Levels.Edit', {
             'key': key
         }, function (data) {
-            $('#layout').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });

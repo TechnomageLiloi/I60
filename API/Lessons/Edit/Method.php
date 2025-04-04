@@ -2,20 +2,20 @@
 
 namespace Liloi\I60\API\Lessons\Edit;
 
-use Liloi\I60\Domains\Levels\Statuses as LevelsStatuses;
-use Liloi\I60\Domains\Levels\Manager as LevelsManager;
+use Liloi\I60\Domains\Lessons\Statuses as LessonsStatuses;
+use Liloi\I60\Domains\Lessons\Manager as LessonsManager;
 use Liloi\I60\API\Method as AbstractMethod;
 
 class Method extends AbstractMethod
 {
     public function execute(): array
     {
-        $entity = LevelsManager::load($_POST['parameters']['key']);
+        $entity = LessonsManager::load($_POST['parameters']['key_level']);
 
         return [
             'render' => $this->render(__DIR__ . '/Template.tpl', [
                 'entity' => $entity,
-                'statuses' => LevelsStatuses::$list,
+                'statuses' => LessonsStatuses::$list,
             ])
         ];
     }

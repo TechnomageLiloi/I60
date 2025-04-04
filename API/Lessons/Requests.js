@@ -37,26 +37,10 @@ Requests.Lessons = {
         });
     },
 
-    remove: function (key)
-    {
-        if(!confirm('Are you sure?'))
-        {
-            return;
-        }
-
-        API.request('Lessons.Remove', {
-            'key': key
-        }, function (data) {
-            Requests.Lessons.getCollection();
-        }, function () {
-
-        });
-    },
-
     edit: function (key)
     {
         API.request('Lessons.Edit', {
-            'key': key
+            'key_level': key
         }, function (data) {
             $('#page').html(data.render);
         }, function () {
@@ -73,13 +57,12 @@ Requests.Lessons = {
 
         const jq_block = $('#ticket-edit');
         API.request('Lessons.Save', {
-            'key': key,
+            'key_lesson': key,
             'title': jq_block.find('[name="title"]').val(),
-            'goal': jq_block.find('[name="goal"]').val(),
             'status': jq_block.find('[name="status"]').val(),
             'program': jq_block.find('[name="program"]').val()
         }, function (data) {
-            Requests.Lessons.getCollection();
+            Requests.show();
         }, function () {
 
         });

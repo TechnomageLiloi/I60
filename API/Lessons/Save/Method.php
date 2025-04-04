@@ -3,18 +3,17 @@
 namespace Liloi\I60\API\Lessons\Save;
 
 use Liloi\I60\API\Method as AbstractMethod;
-use Liloi\I60\Domains\Levels\Manager as LevelsManager;
+use Liloi\I60\Domains\Lessons\Manager as LessonsManager;
 
 class Method extends AbstractMethod
 {
     public function execute(): array
     {
-        $entity = LevelsManager::load($_POST['parameters']['key']);
+        $entity = LessonsManager::load($_POST['parameters']['key_lesson']);
 
         $entity->setTitle($_POST['parameters']['title']);
         $entity->setProgram($_POST['parameters']['program']);
         $entity->setStatus($_POST['parameters']['status']);
-        $entity->setGoal($_POST['parameters']['goal']);
 
         $entity->save();
 
