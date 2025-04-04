@@ -10,10 +10,10 @@ Requests.Journals = {
         });
     },
 
-    show: function (key)
+    show: function (key_journal)
     {
         API.request('Journals.Show', {
-            'key': key
+            'key_journal': key_journal
         }, function (data) {
             $('#layout').html(data.render);
         }, function () {
