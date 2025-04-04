@@ -2,10 +2,8 @@
 
 namespace Liloi\I60\API\Journals\Collection;
 
-use Liloi\API\Response;
 use Liloi\I60\API\Method as AbstractMethod;
-use Liloi\I60\Domains\Lessons\Manager as LessonsManager;
-use Liloi\I60\Domains\Levels\Manager as LevelsManager;
+use Liloi\I60\Domains\Journals\Manager as JournalsManager;
 
 /**
  * Rune API: Blueprint.Blueprints.Show
@@ -15,13 +13,13 @@ class Method extends AbstractMethod
 {
     public function execute(): array
     {
-        $levels = LevelsManager::loadCollection();
-        $lessons = LessonsManager::loadGroup();
+        $keyProblem = $_POST['parameters']['key_problem'];
+        $journals = JournalsManager::loadCollection($keyProblem);
 
         return [
             'render' => $this->render(__DIR__ . '/Template.tpl', [
-                'collection' => $levels,
-                'lessons' => $lessons
+                'journals' => $journals,
+                'key_problem' => $keyProblem,
             ])
         ];
     }

@@ -1,10 +1,10 @@
 Requests.Journals = {
-    getCollection: function ()
+    getCollection: function (key_problem)
     {
         API.request('Journals.Collection', {
-
+            key_problem: key_problem
         }, function (data) {
-            $('#page').html(data.render);
+            $('#wrap-journals').html(data.render);
         }, function () {
 
         });
@@ -15,7 +15,7 @@ Requests.Journals = {
         API.request('Journals.Show', {
             'key': key
         }, function (data) {
-            $('#page').html(data.render);
+            $('#layout').html(data.render);
         }, function () {
 
         });
@@ -37,28 +37,12 @@ Requests.Journals = {
         });
     },
 
-    remove: function (key)
-    {
-        if(!confirm('Are you sure?'))
-        {
-            return;
-        }
-
-        API.request('Journals.Remove', {
-            'key': key
-        }, function (data) {
-            Requests.Journals.getCollection();
-        }, function () {
-
-        });
-    },
-
     edit: function (key)
     {
         API.request('Journals.Edit', {
             'key': key
         }, function (data) {
-            $('#page').html(data.render);
+            $('#layout').html(data.render);
         }, function () {
 
         });
@@ -75,7 +59,6 @@ Requests.Journals = {
         API.request('Journals.Save', {
             'key': key,
             'title': jq_block.find('[name="title"]').val(),
-            'goal': jq_block.find('[name="goal"]').val(),
             'status': jq_block.find('[name="status"]').val(),
             'program': jq_block.find('[name="program"]').val()
         }, function (data) {
