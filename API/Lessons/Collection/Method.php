@@ -15,11 +15,13 @@ class Method extends AbstractMethod
 {
     public function execute(): array
     {
-        $lessons = LessonsManager::loadCollection($_POST['parameters']['key_level']);
+        $keyLevel = $_POST['parameters']['key_level'];
+        $lessons = LessonsManager::loadCollection($keyLevel);
 
         return [
             'render' => $this->render(__DIR__ . '/Template.tpl', [
-                'lessons' => $lessons
+                'lessons' => $lessons,
+                'keyLevel' => $keyLevel,
             ])
         ];
     }

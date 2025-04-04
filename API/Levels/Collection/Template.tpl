@@ -26,7 +26,7 @@
                         <?php echo $entity->getStatusTitle(); ?>
                     </td>
                     <td>
-                        <a href="javascript:void(0)" class="butn" onclick="Requests.Lessons.create('<?php echo $entity->getKey(); ?>');">Create lesson</a>
+                        <a href="javascript:void(0)" class="butn" onclick="Requests.Lessons.getCollection('<?php echo $entity->getKey(); ?>');">Lessons</a>
                         <a href="javascript:void(0)" class="butn" onclick="Requests.Levels.show('<?php echo $entity->getKey(); ?>');">Show</a>
                         <a href="javascript:void(0)" class="butn" onclick="Requests.Levels.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
                     </td>
