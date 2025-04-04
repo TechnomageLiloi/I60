@@ -6,7 +6,7 @@
             height: 100%;
         }
 
-        #table-main
+        #wrap-levels, #wrap-lessons
         {
             border: solid 1px silver;
             width: 50%;

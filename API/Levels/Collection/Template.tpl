@@ -34,4 +34,5 @@
             <?php endforeach; ?>
         </table>
     <?php endif; ?>
+    <script>Requests.Lessons.getCollection(<?php echo $collection->getCurrent(); ?>);</script>
 </div>

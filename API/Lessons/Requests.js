@@ -1,10 +1,10 @@
 Requests.Lessons = {
-    getCollection: function ()
+    getCollection: function (keyLevel)
     {
         API.request('Lessons.Collection', {
-
+            'key_level': keyLevel
         }, function (data) {
-            $('#page').html(data.render);
+            $('#wrap-lessons').html(data.render);
         }, function () {
 
         });
@@ -31,7 +31,7 @@ Requests.Lessons = {
         API.request('Lessons.Create', {
             'key_level': keyLevel
         }, function (data) {
-            Requests.Lessons.getCollection();
+            Requests.Lessons.getCollection(keyLevel);
         }, function () {
 
         });
