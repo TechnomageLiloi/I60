@@ -18,12 +18,13 @@
                         <?php echo $entity->getStatusTitle(); ?>
                     </td>
                     <td>
-                        <a href="javascript:void(0)" class="butn" onclick="Requests.Levels.Lessons.create('<?php echo $entity->getKey(); ?>');">Create lesson</a>
+                        <a href="javascript:void(0)" class="butn" onclick="Requests.Problems.getCollection('<?php echo $entity->getKey(); ?>');">Problems</a>
                         <a href="javascript:void(0)" class="butn" onclick="Requests.Lessons.show('<?php echo $entity->getKey(); ?>');">Show</a>
                         <a href="javascript:void(0)" class="butn" onclick="Requests.Lessons.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
         </table>
+        <script>Requests.Problems.getCollection(<?php echo $lessons->getCurrent(); ?>);</script>
     <?php endif; ?>
 </div>

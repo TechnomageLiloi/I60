@@ -31,7 +31,7 @@ class Manager extends DomainManager
 
         foreach($rows as $row)
         {
-            $collection[] = Entity::create($row);
+            $collection[$row['key_lesson']] = Entity::create($row);
         }
 
         return $collection;

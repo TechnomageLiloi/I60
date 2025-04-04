@@ -9,4 +9,8 @@ use Liloi\Tools\Collection as AbstractCollection;
  */
 class Collection extends AbstractCollection
 {
+    public function getCurrent(): int
+    {
+        return max(array_keys($this->getArrayCopy()));
+    }
 }

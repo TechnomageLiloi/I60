@@ -1,10 +1,10 @@
 Requests.Problems = {
-    getCollection: function ()
+    getCollection: function (keyProblem)
     {
         API.request('Problems.Collection', {
-
+            'key_problem': keyProblem
         }, function (data) {
-            $('#page').html(data.render);
+            $('#wrap-problems').html(data.render);
         }, function () {
 
         });
@@ -15,13 +15,13 @@ Requests.Problems = {
         API.request('Problems.Show', {
             'key': key
         }, function (data) {
-            $('#page').html(data.render);
+            $('#layout').html(data.render);
         }, function () {
 
         });
     },
 
-    create: function ()
+    create: function (keyLesson)
     {
         if(!confirm('Are you sure?'))
         {
@@ -29,9 +29,9 @@ Requests.Problems = {
         }
 
         API.request('Problems.Create', {
-            'debug': true
+            'key_lesson': keyLesson
         }, function (data) {
-            Requests.Problems.getCollection();
+            Requests.Problems.getCollection(keyLesson);
         }, function () {
 
         });
@@ -58,7 +58,7 @@ Requests.Problems = {
         API.request('Problems.Edit', {
             'key': key
         }, function (data) {
-            $('#page').html(data.render);
+            $('#layout').html(data.render);
         }, function () {
 
         });

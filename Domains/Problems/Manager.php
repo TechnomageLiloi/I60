@@ -18,20 +18,20 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'problems';
     }
 
-    public static function loadCollection(): Collection
+    public static function loadCollection(string $keyLesson): Collection
     {
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s order by key_problem asc;',
-            $name
+            'select * from %s where key_lesson="%s" order by key_problem desc;',
+            $name, $keyLesson
         ));
 
         $collection = new Collection();
 
         foreach($rows as $row)
         {
-            $collection[] = Entity::create($row);
+            $collection[$row['key_problem']] = Entity::create($row);
         }
 
         return $collection;
