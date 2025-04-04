@@ -11,7 +11,11 @@ $config = array_merge([
     'title' => 'Interstate 60',
     'start' => 'Requests.layout();',
     'scripts' => [
-        $private['root'] . '/Requests.js'
+        $private['root'] . '/Requests.js',
+        $private['root'] . '/API/Levels/Requests.js',
+        $private['root'] . '/API/Lessons/Requests.js',
+        $private['root'] . '/API/Problems/Requests.js',
+        $private['root'] . '/API/Journals/Requests.js',
     ],
     'prefix' => 'i60_'
 ], $private);

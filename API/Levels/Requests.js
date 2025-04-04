@@ -2,9 +2,9 @@ Requests.Levels = {
     getCollection: function ()
     {
         API.request('Levels.Collection', {
-
+            'debug': true
         }, function (data) {
-            $('#page').html(data.render);
+            $('#wrap-levels').html(data.render);
         }, function () {
 
         });

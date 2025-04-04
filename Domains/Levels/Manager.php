@@ -2,7 +2,7 @@
 
 namespace Liloi\I60\Domains\Levels;
 
-use Liloi\Rune\Domain\Manager as DomainManager;
+use Liloi\I60\Domains\Manager as DomainManager;
 
 class Manager extends DomainManager
 {
@@ -21,7 +21,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s order by key_level asc;',
+            'select * from %s order by key_level desc;',
             $name
         ));
 

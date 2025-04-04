@@ -2,7 +2,7 @@
 
 namespace Liloi\I60\Domains\Journals;
 
-use Liloi\Rune\Domain\Manager as DomainManager;
+use Liloi\I60\Domains\Manager as DomainManager;
 use Liloi\Rune\Domain\Config\Manager as ConfigManager;
 use Liloi\Rune\Domain\Config\Keys as ConfigKeys;
 
