@@ -2,15 +2,15 @@
 
 namespace Liloi\I60\API\Journals\Edit;
 
-use Liloi\I60\Domains\Levels\Statuses as LevelsStatuses;
-use Liloi\I60\Domains\Levels\Manager as LevelsManager;
+use Liloi\I60\Domains\Journals\Statuses as LevelsStatuses;
 use Liloi\I60\API\Method as AbstractMethod;
+use Liloi\I60\Domains\Journals\Manager as JournalsManager;
 
 class Method extends AbstractMethod
 {
     public function execute(): array
     {
-        $entity = LevelsManager::load($_POST['parameters']['key']);
+        $entity = JournalsManager::load($_POST['parameters']['key_journal']);
 
         return [
             'render' => $this->render(__DIR__ . '/Template.tpl', [

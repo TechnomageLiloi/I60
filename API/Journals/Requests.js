@@ -37,10 +37,10 @@ Requests.Journals = {
         });
     },
 
-    edit: function (key)
+    edit: function (key_journal)
     {
         API.request('Journals.Edit', {
-            'key': key
+            'key_journal': key_journal
         }, function (data) {
             $('#layout').html(data.render);
         }, function () {
@@ -48,7 +48,7 @@ Requests.Journals = {
         });
     },
 
-    save: function (key)
+    save: function (key_journal)
     {
         if(!confirm('Are you sure?'))
         {
@@ -57,12 +57,11 @@ Requests.Journals = {
 
         const jq_block = $('#ticket-edit');
         API.request('Journals.Save', {
-            'key': key,
+            'key_journal': key_journal,
             'title': jq_block.find('[name="title"]').val(),
-            'status': jq_block.find('[name="status"]').val(),
-            'program': jq_block.find('[name="program"]').val()
+            'status': jq_block.find('[name="status"]').val()
         }, function (data) {
-            Requests.Journals.getCollection();
+            window.location.reload();
         }, function () {
 
         });

@@ -12,7 +12,7 @@
     }
 </style>
 <div id="ticket-edit">
-    <a href="javascript:void(0)" onclick="Rune.Levels.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" onclick="Requests.Journals.save('<?php echo $entity->getKey(); ?>');">Save</a>
     <hr/>
     <table style="width: 100%;">
         <tr>
@@ -22,8 +22,6 @@
 
         <tr><td>Title</td><td><input type="text" name="title" value="<?php echo $entity->getTitle(); ?>"/></td></tr>
 
-        <tr><td>Goal</td><td><input type="text" name="goal" value="<?php echo $entity->getGoal(); ?>"/></td></tr>
-
         <tr><td>Status</td><td>
             <select name="status">
                 <?php foreach($statuses as $key => $value): ?>
@@ -31,9 +29,7 @@
                 <?php endforeach; ?>
             </select>
         </td></tr>
-
-        <tr><td>Program</td><td><textarea name="program"><?php echo $entity->getProgram(); ?></textarea></td></tr>
     </table>
     <hr/>
-    <a href="javascript:void(0)" onclick="Rune.Levels.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" onclick="Requests.Journals.save('<?php echo $entity->getKey(); ?>');">Save</a>
 </div>

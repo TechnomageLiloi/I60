@@ -4,17 +4,16 @@ namespace Liloi\I60\API\Journals\Save;
 
 use Liloi\I60\API\Method as AbstractMethod;
 use Liloi\I60\Domains\Levels\Manager as LevelsManager;
+use Liloi\I60\Domains\Journals\Manager as JournalsManager;
 
 class Method extends AbstractMethod
 {
     public function execute(): array
     {
-        $entity = LevelsManager::load($_POST['parameters']['key']);
+        $entity = JournalsManager::load($_POST['parameters']['key_journal']);
 
         $entity->setTitle($_POST['parameters']['title']);
-        $entity->setProgram($_POST['parameters']['program']);
         $entity->setStatus($_POST['parameters']['status']);
-        $entity->setGoal($_POST['parameters']['goal']);
 
         $entity->save();
 
