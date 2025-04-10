@@ -13,6 +13,10 @@ class Method extends AbstractMethod
 
         $entity->setTitle($_POST['parameters']['title']);
         $entity->setStatus($_POST['parameters']['status']);
+        $entity->setStart($_POST['parameters']['start']);
+        $entity->setFinish($_POST['parameters']['finish']);
+        $entity->setTrophy($_POST['parameters']['trophy']);
+        $entity->setData($_POST['parameters']['data']);
 
         $entity->save();
 

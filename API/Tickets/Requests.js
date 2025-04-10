@@ -55,7 +55,11 @@ Requests.Tickets = {
         API.request('Tickets.Save', {
             'key_ticket': key_ticket,
             'title': jq_block.find('[name="title"]').val(),
-            'status': jq_block.find('[name="status"]').val()
+            'status': jq_block.find('[name="status"]').val(),
+            'start': jq_block.find('[name="start"]').val(),
+            'finish': jq_block.find('[name="finish"]').val(),
+            'trophy': jq_block.find('[name="trophy"]').val(),
+            'data': jq_block.find('[name="data"]').val()
         }, function (data) {
             Requests.Tickets.getCollection();
         }, function () {

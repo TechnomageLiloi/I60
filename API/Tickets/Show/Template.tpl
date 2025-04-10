@@ -36,7 +36,7 @@
     <tr>
         <td>ID</td>
         <td>
-            <?php echo $entity->getID(); ?>
+            [<?php echo $entity->getID(); ?>]
         </td>
     </tr>
     <tr>
@@ -49,6 +49,18 @@
         <td>Status</td>
         <td>
             <?php echo $entity->getStatusTitle(); ?>
+        </td>
+    </tr>
+    <tr>
+        <td>Period</td>
+        <td>
+            <?php echo $entity->getStart(); ?> - <?php echo $entity->getFinish(); ?>
+        </td>
+    </tr>
+    <tr>
+        <td>Trophy</td>
+        <td>
+            <?php echo $entity->getTrophy(); ?>
         </td>
     </tr>
     <tr>

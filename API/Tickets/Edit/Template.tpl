@@ -30,6 +30,16 @@
                 <?php endforeach; ?>
             </select>
         </td></tr>
+
+        <tr><td>Start</td><td><input type="text" name="start" value="<?php echo $entity->getStart(); ?>"/></td></tr>
+
+        <tr><td>Finish</td><td><input type="text" name="finish" value="<?php echo $entity->getFinish(); ?>"/></td></tr>
+
+        <tr><td>Trophy</td><td><input type="text" name="trophy" value="<?php echo $entity->getTrophy(); ?>"/></td></tr>
+
+        <tr><td>Data</td><td>
+            <textarea name="data"><?php echo $entity->getData(); ?></textarea>
+        </td></tr>
     </table>
     <hr/>
     <a href="javascript:void(0)" class="butn" onclick="Requests.Tickets.save('<?php echo $entity->getKey(); ?>');">Save</a>
