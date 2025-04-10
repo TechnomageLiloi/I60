@@ -33,7 +33,12 @@ class Entity extends AbstractEntity
 
     public function getID(): string
     {
-        return base_convert($this->getKey(), 10, 36);
+        return str_pad(
+            base_convert($this->getKey(), 10, 36),
+            7,
+            '0',
+            STR_PAD_LEFT
+        );
     }
 
     public function save(): void

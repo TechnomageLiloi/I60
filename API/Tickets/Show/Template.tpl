@@ -29,15 +29,32 @@
     }
 </style>
 
+<a href="javascript:void(0)" class="butn" onclick="Requests.Tickets.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
+<hr/>
+
 <table id="table-road">
     <tr>
-        <td style="text-align: center;">
-            <a href="javascript:void(0)" class="butn" onclick="Requests.Tickets.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
+        <td>ID</td>
+        <td>
+            <?php echo $entity->getID(); ?>
         </td>
     </tr>
     <tr>
+        <td>Title</td>
         <td>
             <?php echo $entity->getTitle(); ?>
+        </td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td>
+            <?php echo $entity->getStatusTitle(); ?>
+        </td>
+    </tr>
+    <tr>
+        <td>Data</td>
+        <td>
+            <?php echo $entity->getData(); ?>
         </td>
     </tr>
 </table>

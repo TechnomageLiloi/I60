@@ -5,7 +5,7 @@
         <hr/>
         <table>
             <tr>
-                <th>ID</th>
+                <th>[ID]</th>
                 <th>Title</th>
                 <th>Status</th>
                 <th>Actions</th>
@@ -13,7 +13,7 @@
             <?php foreach($tickets as $entity): ?>
                 <tr style="font-weight: bold;" class="degree <?php echo $entity->getStatusClass(); ?>">
                     <td>
-                        <?php echo $entity->getID(); ?>
+                        [<?php echo $entity->getID(); ?>]
                     </td>
                     <td>
                         <?php echo $entity->getTitle(); ?>

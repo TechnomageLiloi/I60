@@ -6,6 +6,7 @@ body {
   font-family: monospace;
   background-color: white;
   height: 100%;
+  padding: 10px;
 }
 body a.butn {
   border: red 1px solid;
