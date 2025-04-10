@@ -12,6 +12,7 @@ $config = array_merge([
     'start' => 'Requests.layout();',
     'scripts' => [
         $private['root'] . '/Requests.js',
+        $private['root'] . '/API/Tickets/Requests.js',
     ],
     'prefix' => 'i60_'
 ], $private);
