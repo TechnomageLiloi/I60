@@ -3,7 +3,7 @@
     #ticket-edit select,
     #ticket-edit textarea
     {
-        width: 50%;
+        width: 90%;
     }
 
     #ticket-edit textarea
@@ -12,7 +12,8 @@
     }
 </style>
 <div id="ticket-edit">
-    <a href="javascript:void(0)" onclick="Requests.Tickets.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" class="butn" onclick="Requests.Tickets.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" class="butn" onclick="Requests.Tickets.show('<?php echo $entity->getKey(); ?>');">Show</a>
     <hr/>
     <table style="width: 100%;">
         <tr>
@@ -31,5 +32,6 @@
         </td></tr>
     </table>
     <hr/>
-    <a href="javascript:void(0)" onclick="Requests.Tickets.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" class="butn" onclick="Requests.Tickets.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" class="butn" onclick="Requests.Tickets.show('<?php echo $entity->getKey(); ?>');">Show</a>
 </div>

@@ -31,8 +31,8 @@
 
 <table id="table-road">
     <tr>
-        <td style="text-align: right;">
-            <a href="javascript:void(0)" onclick="Requests.Tickets.edit('<?php echo $entity->getKey(); ?>');">Edit</a> &diams;
+        <td style="text-align: center;">
+            <a href="javascript:void(0)" class="butn" onclick="Requests.Tickets.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
         </td>
     </tr>
     <tr>
