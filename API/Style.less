@@ -1,0 +1,76 @@
+@COLOR_GLOBAL_BACKGROUND: white;
+@COLOR_GLOBAL_TEXT: black;
+
+html
+{
+  height: 100%;
+}
+
+body
+{
+  margin: 0;
+  font-family: monospace;
+  background-color: @COLOR_GLOBAL_BACKGROUND;
+  height: 100%;
+
+  a.butn
+  {
+    border: red 1px solid;
+    padding: 2px;
+    background-color: #ffebeb;
+    border-radius: 5px;
+    text-decoration: none;
+    color: red;
+  }
+
+  a.butn:hover
+  {
+    background-color: #ffffeb;
+  }
+
+  #menu
+  {
+    text-align: center;
+    padding: 10px;
+    background-color: lightyellow;
+  }
+
+  #page
+  {
+    height: 100%;
+  }
+
+  table
+  {
+    width: 100%;
+
+    th
+    {
+      padding: 3px;
+      text-align: left;
+      border-bottom: gray 1px solid;
+    }
+
+    td
+    {
+      padding: 3px;
+      text-align: left;
+      border-bottom: gray 1px dashed;
+      vertical-align: top;
+    }
+
+    input,
+    textarea,
+    select
+    {
+      border: silver 1px solid;
+      width: 90%;
+      background-color: lightyellow;
+    }
+
+    textarea
+    {
+      height: 300px;
+    }
+  }
+}
