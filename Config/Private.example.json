@@ -1,0 +1,12 @@
+{
+  "connection": {
+    "host": "",
+    "user": "",
+    "password": "",
+    "database": ""
+  },
+  "admin": {
+    "password": ""
+  },
+  "root": ""
+}
