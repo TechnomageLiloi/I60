@@ -1,0 +1,3 @@
+<FilesMatch ".(tpl|php|less)$">
+    deny from all
+</FilesMatch>

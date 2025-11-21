@@ -1,2 +1,4 @@
 /Config/Private.json
 /Install/Dump/
+/vendor/
+/composer.lock
