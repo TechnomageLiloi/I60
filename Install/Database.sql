@@ -45,6 +45,24 @@ CREATE TABLE `i60_logs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `i60_epochs`
+--
+
+DROP TABLE IF EXISTS `i60_epochs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `i60_epochs` (
+  `key_epoch` tinyint unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `status` tinyint unsigned NOT NULL DEFAULT '1',
+  `summary` text NOT NULL,
+  `start` date NOT NULL,
+  `finish` date NOT NULL,
+  PRIMARY KEY (`key_epoch`)
+) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
