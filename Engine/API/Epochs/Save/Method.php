@@ -9,7 +9,6 @@ class Method extends SuperMethod
 {
     public function execute(): array
     {
-        $this->checkAccess();
         $entity = DiaryManager::load($_POST['parameters']['key_epoch']);
 
         $entity->setStatus($_POST['parameters']['status']);

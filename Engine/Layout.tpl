@@ -23,11 +23,12 @@
     <body>
         <div id="menu">
             <a class="butn" href="javascript:void(0)" onclick="window.location.reload();">Refresh</a>
+            <a class="butn" href="javascript:void(0)" onclick="Requests.Epochs.getCollection();">Epochs</a>
         </div>
 
         <div id="page" class="stylo">
             <script>
-                //Requests.Maps.show();
+                Requests.Epochs.getCollection();
             </script>
         </div>
     </body>
