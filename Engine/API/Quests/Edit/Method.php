@@ -14,8 +14,11 @@ class Method extends SuperMethod
 {
     public function execute(): array
     {
-        $this->checkAccess();
-        $entity = DiaryManager::load($_POST['parameters']['key_quest']);
+        $entity = DiaryManager::load(
+            $_POST['parameters']['key_quest'],
+            $_POST['parameters']['key_milestone'],
+            $_POST['parameters']['key_epoch']
+        );
 
         return [
             'render' => $this->render(__DIR__ . '/Template.tpl', [

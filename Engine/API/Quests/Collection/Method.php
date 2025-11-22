@@ -9,7 +9,6 @@ class Method extends SuperMethod
 {
     public function execute(): array
     {
-        $this->checkAccess();
         $collection = DiaryManager::loadCollection();
 
         return [
