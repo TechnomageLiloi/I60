@@ -28,9 +28,14 @@ class Entity extends AbstractEntity
         return $this->getField('key_quest');
     }
 
-    public function getKeyLevels(): string
+    public function getKeyMilestone(): string
     {
-        return $this->getField('key_level');
+        return $this->getField('key_milestone');
+    }
+
+    public function getKeyEpoch(): string
+    {
+        return $this->getField('key_epoch');
     }
 
     public function parse(): string

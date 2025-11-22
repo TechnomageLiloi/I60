@@ -37,19 +37,13 @@ class Manager extends DomainManager
         return $collection;
     }
 
-    /**
-     * Load day by key.
-     *
-     * @param string $keyLevel
-     * @return Entity
-     */
-    public static function load(string $keyLevel): Entity
+    public static function load(string $keyQuest, string $keyMilestone, string $keyEpoch): Entity
     {
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_quest="%s";',
-            $name, $keyLevel
+            'select * from %s where key_quest="%s" and key_milestone="%s" and key_epoch="%s";',
+            $name, $keyQuest, $keyMilestone, $keyEpoch
         ));
 
         if(!$row)
@@ -71,7 +65,10 @@ class Manager extends DomainManager
         $data = $entity->get();
         unset($data['key_quest']);
 
-        self::update($name, $data, sprintf('key_quest="%s"', $entity->getKey()));
+        self::update($name, $data, sprintf(
+            'key_quest="%s" key_milestone="%s" and key_epoch="%s"',
+            $entity->getKey(), $entity->getKeyMilestone(), $entity->getKeyEpoch()
+        ));
     }
 
     /**
