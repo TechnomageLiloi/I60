@@ -83,6 +83,25 @@ CREATE TABLE `i60_milestones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+
+--
+-- Table structure for table `i60_quests`
+--
+
+CREATE TABLE `i60_quests` (
+  `key_quest` tinyint unsigned NOT NULL,
+  `key_milestone` tinyint unsigned NOT NULL,
+  `key_epoch` tinyint unsigned NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `status` tinyint unsigned NOT NULL DEFAULT '1',
+  `type` tinyint unsigned NOT NULL DEFAULT '1',
+  `summary` text NOT NULL,
+  `data` json NOT NULL,
+  PRIMARY KEY (`key_quest`, `key_milestone`, `key_epoch`),
+  FOREIGN KEY (`key_milestone`, `key_epoch`) REFERENCES `i60_milestones` (`key_milestone`, `key_epoch`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
+
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
