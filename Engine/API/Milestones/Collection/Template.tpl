@@ -20,8 +20,8 @@
                 <?php echo $entity->getStatusTitle(); ?>
             </td>
             <td style="text-align: right;">
-                <a href="javascript:void(0)" class="butn" onclick="Requests.Milestones.show('<?php echo $entity->getKey(); ?>');">Show</a>
-                <a href="javascript:void(0)" class="butn" onclick="Requests.Milestones.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
+                <a href="javascript:void(0)" class="butn" onclick="Requests.Milestones.show('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyEpoch(); ?>');">Show</a>
+                <a href="javascript:void(0)" class="butn" onclick="Requests.Milestones.edit('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyEpoch(); ?>');">Edit</a>
             </td>
         </tr>
         <?php endforeach; ?>

@@ -10,10 +10,11 @@ Requests.Milestones = {
         });
     },
 
-    show: function (key_milestone)
+    show: function (key_milestone, key_epoch)
     {
         API.request('Milestones.Show', {
-            key_milestone: key_milestone
+            key_milestone: key_milestone,
+            key_epoch: key_epoch
         }, function (data) {
             $('#page').html(data.render);
         }, function () {
@@ -37,10 +38,11 @@ Requests.Milestones = {
         });
     },
 
-    edit: function (key_milestone)
+    edit: function (key_milestone, key_epoch)
     {
         API.request('Milestones.Edit', {
-            key_milestone: key_milestone
+            key_milestone: key_milestone,
+            key_epoch: key_epoch
         }, function (data) {
             const wrap = $('#page');
             wrap.html(data.render);
@@ -50,7 +52,7 @@ Requests.Milestones = {
         });
     },
 
-    save: function (key_milestone)
+    save: function (key_milestone, key_epoch)
     {
         if(!confirm('Are you sure?'))
         {
@@ -60,6 +62,7 @@ Requests.Milestones = {
         const jq_block = $('#application-diary-edit');
         API.request('Milestones.Save', {
             key_milestone: key_milestone,
+            key_epoch: key_epoch,
             title: jq_block.find('[name=title]').val(),
             status: jq_block.find('[name=status]').val(),
             summary: jq_block.find('[name=summary]').val(),

@@ -95,8 +95,8 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $milestone = self::getAdapter()->getSingle(sprintf(
-            'select key_milestone from %s where status="%s" and key_epoch="%s" order by key_milestone asc;',
-            $name, Statuses::IN_HAND, EpochsManager::getHighestEpoch()
+            'select key_milestone from %s where key_epoch="%s" order by key_milestone desc;',
+            $name, EpochsManager::getHighestEpoch()
         ));
 
         if(!$milestone)

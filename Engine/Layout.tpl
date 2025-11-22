@@ -17,6 +17,7 @@
 
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Epochs/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Milestones/Requests.js"></script>
 
         <title>Interstate 60</title>
     </head>
@@ -24,6 +25,7 @@
         <div id="menu">
             <a class="butn" href="javascript:void(0)" onclick="window.location.reload();">Refresh</a>
             <a class="butn" href="javascript:void(0)" onclick="Requests.Epochs.getCollection();">Epochs</a>
+            <a class="butn" href="javascript:void(0)" onclick="Requests.Milestones.getCollection();">Milestones</a>
         </div>
 
         <div id="page" class="stylo">

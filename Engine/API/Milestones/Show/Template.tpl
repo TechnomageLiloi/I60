@@ -4,7 +4,7 @@
         <?php echo $entity->getTitle(); ?>
     </h1>
     <div class="data">
-        <a class="butn" href="javascript:void(0)" onclick="Requests.Milestones.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
+        <a class="butn" href="javascript:void(0)" onclick="Requests.Milestones.edit('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyEpoch(); ?>');">Edit</a>
         - <?php echo $entity->getStatusTitle(); ?> - <?php echo $entity->getTypeTitle(); ?> - <?php echo $entity->getData(); ?>
     </div>
     <?php echo $entity->parse(); ?>

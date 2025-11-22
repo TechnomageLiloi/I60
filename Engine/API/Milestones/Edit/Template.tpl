@@ -1,7 +1,7 @@
 <link href="/Engine/API/Milestones/Edit/Style.css" rel="stylesheet" />
 <div id="application-diary-edit">
-    <a class="butn" href="javascript:void(0)" onclick="Requests.Milestones.save('<?php echo $entity->getKey(); ?>');">Save</a>
-    <a class="butn" href="javascript:void(0)" onclick="Requests.Milestones.show('<?php echo $entity->getKey(); ?>');">Cancel</a>
+    <a class="butn" href="javascript:void(0)" onclick="Requests.Milestones.save('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyEpoch(); ?>');">Save</a>
+    <a class="butn" href="javascript:void(0)" onclick="Requests.Milestones.show('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyEpoch(); ?>');">Cancel</a>
     <hr/>
     <table>
 
@@ -42,6 +42,6 @@
 
     </table>
     <hr/>
-    <a class="butn" href="javascript:void(0)" onclick="Requests.Milestones.save('<?php echo $entity->getKey(); ?>');">Save</a>
-    <a class="butn" href="javascript:void(0)" onclick="Requests.Milestones.show('<?php echo $entity->getKey(); ?>');">Cancel</a>
+    <a class="butn" href="javascript:void(0)" onclick="Requests.Milestones.save('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyEpoch(); ?>');">Save</a>
+    <a class="butn" href="javascript:void(0)" onclick="Requests.Milestones.show('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyEpoch(); ?>');">Cancel</a>
 </div>
