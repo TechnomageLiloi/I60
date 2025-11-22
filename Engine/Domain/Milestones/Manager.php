@@ -22,8 +22,8 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s order by key_milestone asc;',
-            $name
+            'select * from %s where key_epoch="%s" order by key_milestone asc;',
+            $name, EpochsManager::getHighestEpoch()
         ));
 
         $collection = new Collection();
