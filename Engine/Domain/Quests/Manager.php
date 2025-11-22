@@ -66,7 +66,7 @@ class Manager extends DomainManager
         unset($data['key_quest']);
 
         self::update($name, $data, sprintf(
-            'key_quest="%s" key_milestone="%s" and key_epoch="%s"',
+            'key_quest="%s" and key_milestone="%s" and key_epoch="%s"',
             $entity->getKey(), $entity->getKeyMilestone(), $entity->getKeyEpoch()
         ));
     }

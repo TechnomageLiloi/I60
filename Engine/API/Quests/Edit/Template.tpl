@@ -1,7 +1,7 @@
 <link href="/Engine/API/Quests/Edit/Style.css" rel="stylesheet" />
 <div id="application-diary-edit">
-    <a class="butn" href="javascript:void(0)" onclick="Requests.Quests.save('<?php echo $entity->getKey(); ?>');">Save</a>
-    <a class="butn" href="javascript:void(0)" onclick="Requests.Quests.show('<?php echo $entity->getKey(); ?>');">Cancel</a>
+    <a class="butn" href="javascript:void(0)" onclick="Requests.Quests.save('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyMilestone(); ?>', '<?php echo $entity->getKeyEpoch(); ?>');">Save</a>
+    <a class="butn" href="javascript:void(0)" onclick="Requests.Quests.show('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyMilestone(); ?>', '<?php echo $entity->getKeyEpoch(); ?>');">Cancel</a>
     <hr/>
     <table>
 
@@ -41,6 +41,6 @@
 
     </table>
     <hr/>
-    <a class="butn" href="javascript:void(0)" onclick="Requests.Quests.save('<?php echo $entity->getKey(); ?>');">Save</a>
-    <a class="butn" href="javascript:void(0)" onclick="Requests.Quests.show('<?php echo $entity->getKey(); ?>');">Cancel</a>
+    <a class="butn" href="javascript:void(0)" onclick="Requests.Quests.save('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyMilestone(); ?>', '<?php echo $entity->getKeyEpoch(); ?>');">Save</a>
+    <a class="butn" href="javascript:void(0)" onclick="Requests.Quests.show('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyMilestone(); ?>', '<?php echo $entity->getKeyEpoch(); ?>');">Cancel</a>
 </div>

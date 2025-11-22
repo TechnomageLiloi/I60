@@ -10,10 +10,12 @@ Requests.Quests = {
         });
     },
 
-    show: function (key_quest)
+    show: function (key_quest, key_milestone, key_epoch)
     {
         API.request('Quests.Show', {
-            key_quest: key_quest
+            key_quest: key_quest,
+            key_milestone: key_milestone,
+            key_epoch: key_epoch
         }, function (data) {
             $('#page').html(data.render);
         }, function () {
@@ -37,10 +39,12 @@ Requests.Quests = {
         });
     },
 
-    edit: function (key_quest)
+    edit: function (key_quest, key_milestone, key_epoch)
     {
         API.request('Quests.Edit', {
-            key_quest: key_quest
+            key_quest: key_quest,
+            key_milestone: key_milestone,
+            key_epoch: key_epoch
         }, function (data) {
             const wrap = $('#page');
             wrap.html(data.render);
@@ -50,7 +54,7 @@ Requests.Quests = {
         });
     },
 
-    save: function (key_quest)
+    save: function (key_quest, key_milestone, key_epoch)
     {
         if(!confirm('Are you sure?'))
         {
@@ -60,6 +64,8 @@ Requests.Quests = {
         const jq_block = $('#application-diary-edit');
         API.request('Quests.Save', {
             key_quest: key_quest,
+            key_milestone: key_milestone,
+            key_epoch: key_epoch,
             title: jq_block.find('[name=title]').val(),
             status: jq_block.find('[name=status]').val(),
             type: jq_block.find('[name=type]').val(),
